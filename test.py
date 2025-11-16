@@ -1,5 +1,6 @@
 # speech to text and text to speech
  
+ 
 import speech_recognition as sr
 import pyttsx3 
  
@@ -33,14 +34,14 @@ while(1):
             # the surrounding noise level 
             r.adjust_for_ambient_noise(source2, duration=0.2)
              
-            # listens for the user's input 
+            #listens for the user's input 
             audio2 = r.listen(source2)
              
             # Using google to recognize audio
             MyText = r.recognize_google(audio2)
             MyText = MyText.lower()
  
-            print("Did you say ", MyText)
+            print("Did you say ",MyText)
             SpeakText(MyText)
              
     except sr.RequestError as e:
@@ -48,4 +49,3 @@ while(1):
          
     except sr.UnknownValueError:
         print("unknown error occurred")
-
